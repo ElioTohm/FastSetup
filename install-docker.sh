@@ -26,6 +26,6 @@ sudo apt-get -y -f install libreadline-dev libncurses5-dev libssl1.0.0 tk8.5-dev
 
 sudo apt-get -y -f install python3 python3-pip
 
-pip3 install docker-compose
+sudo pip3 install docker-compose
 
 
