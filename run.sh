@@ -6,7 +6,6 @@ INSTALL_DOCKER=true
 
 # update and upgrade on fresh install
 sudo apt-get -y update
-sudo apt-get -y upgrade
 
 # install git fish and guake terminal as well as php7 for intellisense 
 if [ "$INSTALL_DEV_ENV" = true ] ; then
@@ -29,7 +28,7 @@ if [ "$INSTALL_LARADOCK" = true ] ; then
 
     #go to laradock and build containers
     cd ~/laradock
-    docker-compose build apache2 mongo mysql php-worker workspace beanstalkd beanstalkd-console php-fpm redis rabbitmq selenium elasticsearch php-worker
+    sudo docker-compose build apache2 mongo mysql php-worker workspace beanstalkd beanstalkd-console php-fpm redis rabbitmq selenium elasticsearch php-worker
 
 fi
 
