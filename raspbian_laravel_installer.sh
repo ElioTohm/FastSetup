@@ -9,20 +9,17 @@ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # NGINX CONFIG EXAMPLE
+# git clone your project and set project path accordingly 
 # sudo nano /etc/nginx/sites-enabled/laravel
 # server {
 #     listen 80 default_server;
 #     listen [::]:80 default_server;
-
-#     root /home/pi/pushvod/public;
+#     root <project path>;
 #     index index.php index.html index.htm;
-
 #     server_name 192.168.39.95;
-
 #     location / {
 #         try_files $uri $uri/ /index.php?$query_string;
 #     }
-
 #     location ~ \.php$ {
 #         try_files $uri /index.php =404;
 #         include                  fastcgi_params;
@@ -35,3 +32,18 @@ sudo apt-get install -y nodejs
 #         fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
 #     }
 # }
+sudo apt install samba samba-common-bin -y
+
+# sudo nano /etc/samba/smb.conf
+# add the following 
+# [pihome]
+#     comment= Pi Home
+#     path=/home/pi
+#     browseable=Yes
+#     writeable=Yes
+#     only guest=no
+#     create mask=0777
+#     directory mask=0777
+#     public=no
+sudo /etc/init.d/samba restart
+sudo smbpasswd -a pi
