@@ -32,6 +32,7 @@ sudo apt-get install -y nodejs
 #         fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
 #     }
 # }
+
 sudo apt install samba samba-common-bin -y
 
 # sudo nano /etc/samba/smb.conf
