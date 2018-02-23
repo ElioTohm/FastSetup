@@ -47,7 +47,7 @@ EOF
 #########################################################################
 function installonARMv8 {
   #docker installation
-  sudo apt-get install \
+  apt-get install \
        apt-transport-https \
        ca-certificates \
        curl \
@@ -55,34 +55,34 @@ function installonARMv8 {
        software-properties-common
 
   # add repo keys
-  curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
-  sudo apt-key fingerprint 0EBFCD88
+  curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | apt-key add -
+  apt-key fingerprint 0EBFCD88
 
   # add docker repo for armhf
   echo "deb [arch=armhf] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
        $(lsb_release -cs) stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list
+      tee /etc/apt/sources.list.d/docker.list
 
   # update repo list
-  sudo apt-get update
+  apt-get update
 
   # install docker
-  sudo apt-get install docker-ce
+  apt-get install docker-ce
   # add user to docker group
-  sudo usermod pi -aG docker
+  usermod pi -aG docker
 
   # Turn off swap for kubernetes to work
-  sudo dphys-swapfile swapoff && \
-  sudo dphys-swapfile uninstall && \
-  sudo update-rc.d dphys-swapfile remove
+  dphys-swapfile swapoff && \
+  dphys-swapfile uninstall && \
+  update-rc.d dphys-swapfile remove
 
-  sudo echo "cgroup_enable=cpuset cgroup_enable=memory" >> /boot/cmdline.txt
+  echo "cgroup_enable=cpuset cgroup_enable=memory" >> /boot/cmdline.txt
 
   # Add repo lists & install kubeadm
-  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
-  echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list && \
-  sudo apt-get update -q && \
-  sudo apt-get install -qy kubeadm
+  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
+  echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list && \
+  apt-get update -q && \
+  apt-get install -qy kubeadm
 }
 
 #########################################################################

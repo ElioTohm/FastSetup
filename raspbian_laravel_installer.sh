@@ -1,16 +1,16 @@
 # !/bin/bash
 
-sudo apt-get update --fix-missing 
-sudo apt-get upgrade -y
+apt-get update --fix-missing 
+apt-get upgrade -y
 
-sudo apt-get install nginx php7.1 php7.1-curl php7.1-gd php7.1-imap php7.1-json php7.1-mcrypt php7.1-mysql php7.1-opcache php7.1-xmlrpc php7.1-xml php7.1-fpm php7.1-mbstring php7.1-sqlite3 php7.1-zip composer -y
+apt-get install nginx php7.1 php7.1-curl php7.1-gd php7.1-imap php7.1-json php7.1-mcrypt php7.1-mysql php7.1-opcache php7.1-xmlrpc php7.1-xml php7.1-fpm php7.1-mbstring php7.1-sqlite3 php7.1-zip composer -y
 
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-sudo apt-get install -y nodejs
+curl -sL https://deb.nodesource.com/setup_9.x | -E bash -
+apt-get install -y nodejs
 
 # NGINX CONFIG EXAMPLE
 # git clone your project and set project path accordingly 
-# sudo nano /etc/nginx/sites-enabled/laravel
+# nano /etc/nginx/sites-enabled/laravel
 # server {
 #     listen 80 default_server;
 #     listen [::]:80 default_server;
@@ -33,9 +33,9 @@ sudo apt-get install -y nodejs
 #     }
 # }
 
-sudo apt install samba samba-common-bin -y
+apt install samba samba-common-bin -y
 
-# sudo nano /etc/samba/smb.conf
+# nano /etc/samba/smb.conf
 # add the following 
 # [pihome]
 #     comment= Pi Home
@@ -46,5 +46,5 @@ sudo apt install samba samba-common-bin -y
 #     create mask=0777
 #     directory mask=0777
 #     public=no
-sudo /etc/init.d/samba restart
-sudo smbpasswd -a pi
+/etc/init.d/samba restart
+smbpasswd -a pi
