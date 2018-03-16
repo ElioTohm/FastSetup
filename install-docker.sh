@@ -5,7 +5,9 @@ apt-get -y -f install curl \
     linux-image-extra-$(uname -r) \
     linux-image-extra-virtual \
     apt-transport-https \
-    ca-certificates 
+    ca-certificates \
+    software-properties-common \
+    python-software-propertie
 
 curl -fsSL https://yum.dockerproject.org/gpg | apt-key add -
 
