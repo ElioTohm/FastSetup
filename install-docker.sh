@@ -20,8 +20,9 @@ add-apt-repository \
 
 apt-get update
 
-apt-get -y -f install python3 python3-pip docker-engine libreadline-dev libncurses5-dev libssl1.0.0 tk8.5-dev zlib1g-dev liblzma-dev
+apt-get -y -f install docker-engine libreadline-dev libncurses5-dev libssl1.0.0 tk8.5-dev zlib1g-dev liblzma-dev docker-compose
 
-pip3 install docker-compose
+groupadd docker
 
+gpasswd -a $USER docker
 

@@ -6,7 +6,7 @@ PROJECT_PATH=/home/pi/project
 apt-get update --fix-missing 
 apt-get upgrade -y
 
-apt-get install nginx php7.1 php7.1-curl php7.1-gd php7.1-imap php7.1-json php7.1-mcrypt php7.1-mysql php7.1-opcache php7.1-xmlrpc php7.1-xml php7.1-fpm php7.1-mbstring php7.1-sqlite3 php7.1-zip composer -y
+apt-get install mysql nginx php7.1 php7.1-curl php7.1-gd php7.1-imap php7.1-json php7.1-mcrypt php7.1-mysql php7.1-opcache php7.1-xmlrpc php7.1-xml php7.1-fpm php7.1-mbstring php7.1-sqlite3 php7.1-zip composer -y
 
 curl -sL https://deb.nodesource.com/setup_9.x | -E bash -
 apt-get install -y nodejs
