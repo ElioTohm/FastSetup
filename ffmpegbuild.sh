@@ -1,3 +1,5 @@
+#!/bin/bash
+
 git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg/
 sudo apt-get install build-essential \ 
 yasm \
@@ -29,11 +31,12 @@ mercurial \
 pkg-config \
 texinfo \
 zlib1g-dev \
-libx264-dev
-
+libx264-dev \
 libvpx-dev 
+
 cd ffmpeg && \
-PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
+PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" 
+./configure \
 --prefix="$HOME/ffmpeg_build" \
 --pkg-config-flags="--static" \
 --extra-cflags="-I$HOME/ffmpeg_build/include" \
@@ -50,7 +53,7 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./conf
 --enable-libvorbis \
 --enable-libvpx \
 --enable-libx264 \
---enable-nonfree 
+--enable-nonfree
 PATH="$HOME/bin:$PATH" make && \
 make install && \
 hash -r
