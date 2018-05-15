@@ -192,5 +192,5 @@ curl -sL https://deb.nodesource.com/setup_9.x | -E bash -
 apt-get install -y nodejs
 
 
-apt-get install -y mysql
+apt-get install -y mysql-server
 
