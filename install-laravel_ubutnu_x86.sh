@@ -26,7 +26,7 @@ zip \
 unzip \
 composer \
 php7.2 \
-php7.2-curl \ 
+php7.2-curl \
 php7.2-gd \
 php7.2-imap \
 php7.2-json \
